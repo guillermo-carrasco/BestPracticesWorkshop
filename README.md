@@ -13,7 +13,19 @@ For Life Laboratory, Stockholm, Sweden.
 * (Optional but interesting) - [Master Markdown](http://guides.github.com/overviews/mastering-markdown/)
 
 ###Python and related
-* [Anaconda and virtual environments](https://store.continuum.io/cshop/anaconda/)
+###### Virtual environments
+A Virtual Environment, put simply, is an isolated working copy of Python which allows
+you to work on a specific project without worry of affecting other projects. For example, 
+you can work on a project which requires Django 1.3 while also maintaining a project 
+which requires Django 1.0.
+
+It also also allows you to install python packages without root permissions. 
+[Anaconda](https://store.continuum.io/cshop/anaconda/) is a tool to create and
+isolated virtual environment that comes with a lot of pre-installed scientific
+python packages: scikit, pandas, numpy, etc.
+
+Please, try to install Anaconda and create a new virtual environment for the workshop
+on your laptop.
 
 ##Styling standards
 >Foolish Consistency is the Hobgoblin of Little Minds - "Guido van Rossum"
@@ -176,7 +188,7 @@ x = x + 1                 # Increment x
 ```
 
 But this is useful:
-```
+```python
 x = x + 1                 # Compensate for border
 ```
 #####Documentation strings (Docstrings)
@@ -203,7 +215,7 @@ def complex(real=0.0, imag=0.0):
     ...
 ```
 
-__Suggestion__: Use [sphinx](ihttp://sphinx-doc.org/) style docstrings to generate 
+__Suggestion__: Use [sphinx](http://sphinx-doc.org/) style docstrings to generate 
 nice and exportable configurations.
 
 ####Naming conventions
@@ -213,10 +225,9 @@ naming style is being used, independently from what they are used for.
 In order to have an homogeneous-looking code, we will follow some simple naming
 conventions:
 * _Package and Module Names_: Modules should have short, all-lowercase names. Underscores
-can be used in the module name if it improves readability. Python packages should 
-also have short, all-lowercase names, although the use of underscores is discouraged.
-Since module names are mapped to file names, and some file systems are case insensitive 
-and truncate long names, it is important that module names be chosen to be fairly short.
+can be used in the module name if it improves readability. Since module names are mapped 
+to file names, and some file systems are case insensitive and truncate long names, 
+it is important that module names be chosen to be fairly short.
 * _Class names_: Class names should normally use the CapWords convention.
 * _Exception names_: Because exceptions should be classes, the class naming convention 
 applies here.
@@ -236,7 +247,7 @@ as necessary to improve readability.
 * _Constants_: Constants are usually defined on a module level and written in all 
 capital letters with underscores separating words. Examples include MAX_OVERFLOW and TOTAL.
 
-####Programming recommendations
+####Other programming recommendations
 * Comparisons to singletons like `None` should always be done with `is` or `is not`, never 
 the equality operators. _NOTE_: Also, beware of writing `if x` when you really mean
 `if x is not None` -- e.g. when testing whether a variable or argument that defaults 
@@ -256,7 +267,7 @@ try:
 except:
     platform_specific_module = None
 ```
-A bare `except:` clause will catch SystemExit and KeyboardInterrupt exceptions, 
+A bare `except:` clause will catch `SystemExit` and `KeyboardInterrupt` exceptions, 
 making it harder to interrupt a program with Control-C, and can disguise other problems.
 * Use `''.startswith()` and `''.endswith()` instead of string slicing to check for prefixes or 
 suffixes. `startswith()` and `endswith()` are cleaner and less error prone. For example:
