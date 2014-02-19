@@ -3,29 +3,40 @@
 Material for the workshop on Best Practices on Development hosted at Science
 For Life Laboratory, Stockholm, Sweden.
 
-##Previous reads and short tutorials
+## Homework: To Read and Install Before the Workshop
 ###Git & GitHub
 
+#### Read first
+* [Understanding GitHub workflow](http://guides.github.com/overviews/flow/)
+* [Forking projects](http://guides.github.com/overviews/forking/)
+
+#### Read second
 * [15 minutes hands-on Git tutorial](http://try.github.io/levels/1/challenges/1)
-* [Understanding GitHub workflow](http://guides.github.com/overviews/flow/) and
-[Forking projects](http://guides.github.com/overviews/forking/) - **Those two are important**
 * [Mastering issues](http://guides.github.com/overviews/issues/)
-* (Optional but interesting) - [Master Markdown](http://guides.github.com/overviews/mastering-markdown/)
+#### Optional but useful
+* [Master Markdown](http://guides.github.com/overviews/mastering-markdown/)
 
-###Python and related
-###### Virtual environments
-A Virtual Environment, put simply, is an isolated working copy of Python which allows
-you to work on a specific project without worry of affecting other projects. For example, 
-you can work on a project which requires Django 1.3 while also maintaining a project 
-which requires Django 1.0.
+###Python et al
+##### Virtual Environments with anaconda
+######Isolate your Python
+Virtual environments allow you to maintain and switch quickly between
+different sets of python binaries and packages.
+For example, you can work on a project which requires python 2.6 and numpy 1.7
+while also maintaining a project which requires python 2.7 and numpy 1.8.
+Because packages are installed inside your home directory, virtual environments
+also allow you to install python packages without root permissions (as we must
+on UPPMAX).
 
-It also also allows you to install python packages without root permissions. 
-[Anaconda](https://store.continuum.io/cshop/anaconda/) is a tool to create and
-isolated virtual environment that comes with a lot of pre-installed scientific
-python packages: scikit, pandas, numpy, etc.
+[conda](http://conda.pydata.org/docs/) is a tool to create these isolated
+virtual environments as well as a fantastic package management tool. It allows
+simple installation of complex scientific packages (scipy, numpy, pandas, etc.)
+via the meta-package [Anaconda](https://store.continuum.io/cshop/anaconda/),
+and works together with other package mangers like pip.
 
-Please, try to install Anaconda and create a new virtual environment for the workshop
-on your laptop.
+We will go through the installation of conda/Anaconda at the beginning of the
+workshop, but you are welcome to try installing on your own as well.
+
+## Workshop Material
 
 ##Styling standards
 >Foolish Consistency is the Hobgoblin of Little Minds - "Guido van Rossum"
