@@ -54,8 +54,8 @@ Spaces are preferred over tabs for the following reason: spaces are spaces on ev
 editor on every operating system. Tabs can be configured to act as 2, 4, 8 or whichever
 number of *"spaces"* and this can make code unreadable when being shared.
 
-You can usually set your editor to insert four spaces in place of a tab;
-in vim, you can add this code to your .vimrc:
+This does not mean that you can't use the tab button. You can usually set your
+editor to insert four spaces in place of a tab; in vim, you can add this code to your .vimrc:
 
 ```
 filetype plugin indent on
