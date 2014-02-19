@@ -13,12 +13,12 @@ For Life Laboratory, Stockholm, Sweden.
 #### Read second
 * [15 minutes hands-on Git tutorial](http://try.github.io/levels/1/challenges/1)
 * [Mastering issues](http://guides.github.com/overviews/issues/)
+
 #### Optional but useful
 * [Master Markdown](http://guides.github.com/overviews/mastering-markdown/)
 
 ###Python et al
 ##### Virtual Environments with anaconda
-######Isolate your Python
 Virtual environments allow you to maintain and switch quickly between
 different sets of python binaries and packages.
 For example, you can work on a project which requires python 2.6 and numpy 1.7
@@ -38,53 +38,59 @@ workshop, but you are welcome to try installing on your own as well.
 
 ## Workshop Material
 
-##Styling standards
+### Styling Standards
+
 >Foolish Consistency is the Hobgoblin of Little Minds - "Guido van Rossum"
 
-We're focusing on Python development on this workshop. Python has it's own styling
-guide and patterns that actually can be applied to most of the existing programming
-languages. These guide is called [PEP8](http://www.python.org/dev/peps/pep-0008/), 
-and we will be establishing as standard the following subset:
+We're focusing on Python development on this workshop. Python has its own styling
+guide and patterns (that can actually also be applied to most of the existing
+programming languages). These guide is called [PEP8](http://www.python.org/dev/peps/pep-0008/), 
+and we will be establishing as standard the following subset of these rules:
 
 ####4 spaces per indentation level
-Use 4 spaces per indentation level. Continuation lines should align wrapped elements 
-either vertically using Python's implicit line joining inside parentheses, brackets
-and braces, or using a hanging indent. When using a hanging indent the following 
-considerations should be applied; there should be no arguments on the first line 
-and further indentation should be used to clearly distinguish itself as a continuation line.
+Use 4 spaces per indentation level. Continuation of multiple-line statements
+should align wrapped elements either vertically using Python's implicit line
+joining inside parentheses, brackets and braces, or using a hanging indent.
 
-For example:
+When using a hanging indent, the following considerations should be applied:
+* there should be no arguments on the first line; and
+* further indentation should be used to clearly distinguish continuation lines from normal code.
 
-Yes:
+An example to clarify:
+
+Yes!
 ```python
-# Aligned with opening delimiter
+# Continuation line aligned with opening delimiter
 foo = long_function_name(var_one, var_two,
                          var_three, var_four)
 
-# More indentation included to distinguish this from the rest.
+# Indentation used to distinguish the continuation from the next lines of code:
 def long_function_name(
         var_one, var_two, var_three,
         var_four):
     print(var_one)
 ```
-No:
+No!
 ```python
-# Arguments on first line forbidden when not using vertical alignment
+# Arguments should not be used on the first line
+#   when not using vertical alignment of continuation lines
+#   (compare to first example, above):
 foo = long_function_name(var_one, var_two,
     var_three, var_four)
 
-# Further indentation required as indentation is not distinguishable
+# Further indentation required as indentation is not distinguishable from the
+#   next lines of code:
 def long_function_name(
     var_one, var_two, var_three,
     var_four):
     print(var_one)
 ```
 
-Spaces are preferred over tabs for the following reason: Spaces are spaces on every
+Spaces are preferred over tabs for the following reason: spaces are spaces on every
 editor on every operating system. Tabs can be configured to act as 2, 4, 8 or whichever
-number of *"spaces"* and this can make code unreadable.
+number of *"spaces"* and this can make code unreadable when being shared.
 
-####Maximum line length _(solf rule)_
+####Maximum line length _(soft rule)_
 Limit all lines to a maximum of 79 characters. Break down the line if it exceeds
 the maximum length. For example:
 
