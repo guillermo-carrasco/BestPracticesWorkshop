@@ -45,12 +45,26 @@ workshop, but you are welcome to try installing on your own as well.
 We're focusing on Python development on this workshop. Python has its own styling
 guide and patterns (that can actually also be applied to most of the existing
 programming languages). These guide is called [PEP8](http://www.python.org/dev/peps/pep-0008/), 
-and we will be establishing as standard the following subset of these rules:
+and we will be establishing as standard at SciLifeLab the following subset
+of these rules:
 
 ####4 spaces per indentation level
-Use 4 spaces per indentation level. Continuation of multiple-line statements
-should align wrapped elements either vertically using Python's implicit line
-joining inside parentheses, brackets and braces, or using a hanging indent.
+Use 4 spaces per indentation level -- don't use tabs.
+Spaces are preferred over tabs for the following reason: spaces are spaces on every
+editor on every operating system. Tabs can be configured to act as 2, 4, 8 or whichever
+number of *"spaces"* and this can make code unreadable when being shared.
+
+You can usually set your editor to insert four spaces in place of a tab;
+in vim, you can add this code to your .vimrc:
+
+```
+filetype plugin indent on
+autocmd FileType python set shiftwidth=4 | set expandtab | set tabstop=4 | set softtabstop=4 | set autoindent
+```
+
+You can enable similar functionality in [Xcode](http://stackoverflow.com/a/16263490/1256058) or in Eclipse by using PyDev.
+
+####Indentation of Multi-Line Statements
 
 When using a hanging indent, the following considerations should be applied:
 * there should be no arguments on the first line; and
@@ -86,10 +100,6 @@ def long_function_name(
     print(var_one)
 ```
 
-Spaces are preferred over tabs for the following reason: spaces are spaces on every
-editor on every operating system. Tabs can be configured to act as 2, 4, 8 or whichever
-number of *"spaces"* and this can make code unreadable when being shared.
-
 ####Maximum line length _(soft rule)_
 Limit all lines to a maximum of 79 characters. Break down the line if it exceeds
 the maximum length. For example:
@@ -121,7 +131,7 @@ No:
 import os, sys
 ```
 
-If importing within the same package though, this is ok:
+Multiple submodule imports on the same line are okay:
 ```python
 from subprocess import Popen, PIPE
 ```
@@ -134,31 +144,41 @@ difficult readability, you can always make an alias:
 import very_long_and_weird_module_name as long_module
 ```
 
+It is also nice to alphabetize your imports though I doubt this is a convention.
+Also, compartmentalize "from"-style imports separate from basic ones:
+```
+import collections
+import numpy as np
+import shutil
+
+from matplotlib import pyplot as plt
+from subprocess import check_output
+```
+
 ####Whitespace in Expressions and Statements
 Avoid extraneous whitespace in the following situations:
 
 * Immediately inside parentheses, brackets or braces.
-```
-Yes: spam(ham[1], {eggs: 2})
-No:  spam( ham[ 1 ], { eggs: 2 } )
-```
+Yes:
+> spam(ham[1], {eggs: 2})
+No:
+>spam( ham[ 1 ], { eggs: 2 } )
 * Immediately before a comma, semicolon, or colon:
-```
-Yes: if x == 4: print x, y; x, y = y, x
-No:  if x == 4 : print x , y ; x , y = y , x
-```
+Yes:
+> if x == 4: print x, y; x, y = y, x
+No:
+>if x == 4 : print x , y ; x , y = y , x
 * Immediately before the open parenthesis that starts the argument list of a function call:
-```
-Yes: spam(1)
-No:  spam (1)
-```
+Yes:
+>spam(1)
+No:
+>spam (1)
 * Immediately before the open parenthesis that starts an indexing or slicing:
-```
-Yes: dict['key'] = list[index]
-No:  dict ['key'] = list [index]
-```
+Yes:
+>dict['key'] = list[index]
+No:
+>dict ['key'] = list [index]
 * More than one space around an assignment (or other) operator to align it with another.
-
 Yes:
 ```
 x = 1
@@ -173,31 +193,30 @@ long_variable = 3
 ```
 
 ####Comments
-Comments that contradict the code are worse than no comments. **Always make a priority 
-of keeping the comments up-to-date when the code changes!**
+Comments that contradict the code are worse than no comments; however,
+** you should always make it a priority to keep the comments up-to-date
+when the code changes!**
 
 Comments should be complete sentences. If a comment is a phrase or sentence, its
-first word should be capitalized, unless it is an identifier that begins with a 
-lower case letter (never alter the case of identifiers!).
+first word should be capitalized, unless it is an identifier that begins with a
+lowercase letter (never alter the case of identifiers!).
 
-If a comment is short, the period at the end can be omitted. Block comments generally 
-consist of one or more paragraphs built out of complete sentences, and each sentence 
+If a comment is short, the period at the end can be omitted. Block comments generally
+consist of one or more paragraphs built out of complete sentences, and each sentence
 should end in a period.
 
-You should use two spaces after a sentence-ending period.
-
-Python coders from non-English speaking countries: please write your comments in 
-English, unless you are 120% sure that the code will never be read by people who 
+Python coders from non-English speaking countries: please write your comments in
+English, unless you are 120% sure that the code will never be read by people who
 don't speak your language.
 
 #####Inline comments
 Use inline comments sparingly.
 
-An inline comment is a comment on the same line as a statement. Inline comments 
-should be separated by at least two spaces from the statement. They should start 
+An inline comment is a comment on the same line as a statement. Inline comments
+should be separated by at least two spaces from the statement. They should start
 with a `#` and a single space.
 
-Inline comments are unnecessary and in fact distracting if they state the obvious. 
+Inline comments are unnecessary and in fact distracting if they state the obvious.
 Don't do this:
 
 ```python
@@ -209,13 +228,13 @@ But this is useful:
 x = x + 1                 # Compensate for border
 ```
 #####Documentation strings (Docstrings)
-A docstring is a string literal that occurs as the first statement in a module, 
+A docstring is a string literal that occurs as the first statement in a module,
 function, class, or method definition. Such a docstring becomes the ```__doc__```
  special attribute of that object.
 
-Write docstrings for all public modules, functions, classes, and methods. 
-Docstrings are not necessary for non-public methods, but you should have a comment 
-that describes what the method does. This comment should appear after the def line.
+Write docstrings for all public modules, functions, classes, and methods.
+Docstrings are not necessary for non-public methods, but you should have a comment
+that describes what the method does. This comment should appear after the def line
 
 Use the docstrings to document the parameters of your function, so other people
 can easily understand what the function does:
