@@ -15,7 +15,7 @@ Anaconda is available for Linux, OS X, and Windows, and works the same way for a
 
 The conda package and environment management system allows users to install multiple versions of binary packages (and any required libraries) appropriate for their platform and easily switch between them, as well as easily download updates from an upstream repository. It also works in tandem with pip, so each system is aware of changes made by the other.
 
-conda a concept of environments which are conceptually similar to virtualenvs, but which use filesystem-level hard links to create entirely self-contained Python runtime layouts. By using the ‘conda’ command line tool, users can easily switch between environments, create environments, and install different versions of libraries and modules into them.
+conda has a concept of environments which are conceptually similar to virtualenvs, but which use filesystem-level hard links to create entirely self-contained Python runtime layouts. By using the ‘conda’ command line tool, users can easily switch between environments, create environments, and install different versions of libraries and modules into them.
 
 ### Warnings
 
