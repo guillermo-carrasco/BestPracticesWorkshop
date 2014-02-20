@@ -53,9 +53,9 @@ installation and usage of Ana/conda.
         * [Documentation strings - Docstrings](#documentation-strings-docstrings)
     * [Naming conventions](DOCS/styling.md#naming-conventions)
     * [Other programming recommendations](DOCS/styling.md#other-programming-recommendations)
-* [IPython](#ipython)
-* [Debugger](#debugger-ipdb)
-    * [(i)pdb useful commands](#ipdb-useful-commands)
+* [IPython](DOCS/ipython.md)
+* [Debugger](DOCS/ipdb.md)
+    * [(i)pdb useful commands](DOCS/ipdb.md#ipdb-useful-commands)
 
 ### Styling Standards
 

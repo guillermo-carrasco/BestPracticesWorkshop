@@ -383,5 +383,5 @@ Yes:   if greeting:
 No:    if greeting == True:
 Worse: if greeting is True:
 ```
-[BACK TO INDEX](../README.md)
 __________
+[BACK TO INDEX](../README.md)
