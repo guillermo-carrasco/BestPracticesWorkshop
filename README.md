@@ -42,9 +42,6 @@ workshop, but you are welcome to try installing on your own as well.
 
 > Code is read much more often than it is written.
  
- _Guido van Rossum, Python's Benevolent Dictator for Life_
-
-
 We're focusing on Python development on this workshop. Python has its own styling
 guide and patterns (which can actually also be applied to most of the existing
 programming languages). These guide is called [PEP8](http://www.python.org/dev/peps/pep-0008/), 
