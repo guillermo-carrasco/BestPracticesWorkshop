@@ -113,12 +113,23 @@ with open('/path/to/some/file/you/want/to/read') as file_1, \
 ```
 
 **Tip:** Set up your editor to show you a line on the column 80, so you can 
-easily see if you're writing too long lines:
+easily see when your line is becoming too long:
 
 <p align="center">
   <img src="https://raw2.github.com/guillermo-carrasco/BestPracticesWorkshop/master/images/vim_maxlength.png"
        alt="VIM configured to show maximum column length"/>
 </p>
+
+To do this in vim, you can add the following to your .vimrc:
+
+```
+if exists('+colorcolumn')
+      let &colorcolumn="80"
+      highlight ColorColumn ctermbg=235 guibg=#2c2d27
+else
+      au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
+endif
+```
 
 ####Imports
 Imports should usually be on separate lines, e.g.:
