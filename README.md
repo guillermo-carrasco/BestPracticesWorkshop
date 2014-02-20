@@ -40,7 +40,7 @@ workshop, but you are welcome to try installing on your own as well.
 
 ### Styling Standards
 
->Foolish Consistency is the Hobgoblin of Little Minds - "Guido van Rossum"
+`Foolish Consistency is the Hobgoblin of Little Minds - "Guido van Rossum"`
 
 We're focusing on Python development on this workshop. Python has its own styling
 guide and patterns (that can actually also be applied to most of the existing
@@ -169,23 +169,25 @@ No:
 * Immediately before a comma, semicolon, or colon:
 
 Yes:
-> if x == 4: print x, y; x, y = y, x
+`if x == 4: print x, y; x, y = y, x`
 No:
->if x == 4 : print x , y ; x , y = y , x
+`if x == 4 : print x , y ; x , y = y , x`
 
 * Immediately before the open parenthesis that starts the argument list of a function call:
 
 Yes:
->spam(1)
+`spam(1)`
+
 No:
->spam (1)
+`spam (1)`
 
 * Immediately before the open parenthesis that starts an indexing or slicing:
 
 Yes:
->dict['key'] = list[index]
+`dict['key'] = list[index]`
+
 No:
->dict ['key'] = list [index]
+`dict ['key'] = list [index]`
 
 * More than one space around an assignment (or other) operator to align it with another.
 
