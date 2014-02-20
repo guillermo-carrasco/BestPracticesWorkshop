@@ -1,3 +1,5 @@
+<-- [BACK TO INDEX](../README.md)
+----------
 ##conda / anaconda installation and usage guide
 
 ###Anaconda
@@ -325,3 +327,5 @@ Cleaning up...
 ```
 
 Alright so... that's it. That's all I got.
+-----
+<-- [BACK TO INDEX](../README.md)
