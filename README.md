@@ -40,7 +40,7 @@ installation and usage of Ana/conda.
 
 **Index:**
 
-* [Styling Standards](DOCS/styling-standards.md)
+* [Styling Standards](DOCS/styling.md)
     * [4 spaces per indentation level](#4-spaces-per-indentation-level)
     * [Indentation of Multi-Line Statements](#indentation-of-multi-line-statements)
     * [Maximum line length (soft rule)](#maximum-line-length-soft-rule)
