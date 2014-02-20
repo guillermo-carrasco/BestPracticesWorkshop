@@ -1,4 +1,4 @@
-[BACK TO INDEX](../README.md#read-first)
+[BACK TO INDEX](../README.md)
 __________
 ##conda / anaconda installation and usage guide
 
