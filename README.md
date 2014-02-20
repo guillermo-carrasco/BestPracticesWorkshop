@@ -33,8 +33,8 @@ simple installation of complex scientific packages (scipy, numpy, pandas, etc.)
 via the meta-package [Anaconda](https://store.continuum.io/cshop/anaconda/),
 and works together with other package mangers like pip.
 
-We will go through the installation of conda/Anaconda at the beginning of the
-workshop, but you are welcome to try installing on your own as well.
+[Here](conda_howto.md) you can find a really good guide written by Mario Giovacchini about
+installation and usage of Ana/conda.
 
 ## Workshop Material
 
