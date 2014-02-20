@@ -40,8 +40,10 @@ workshop, but you are welcome to try installing on your own as well.
 
 ### Styling Standards
 
-> Code is read much more often than it is written.
->     _\- A Wise Pythonista_
+```
+Code is read much more often than it is written.
+     - A Wise Pythonista
+```
  
 We're focusing on Python development on this workshop. Python has its own styling
 guide and patterns (which can actually also be applied to most of the existing
@@ -174,28 +176,28 @@ Avoid extraneous whitespace in the following situations:
 
 ```
 Yes: spam(ham[1], {eggs: 2})
-No: spam( ham[ 1 ], { eggs: 2 } )
+No:  spam( ham[ 1 ], { eggs: 2 } )
 ```
 
 * Immediately before a comma, semicolon, or colon:
 
 ```
 Yes: if x == 4: print x, y; x, y = y, x
-No: if x == 4 : print x , y ; x , y = y , x
+No:  if x == 4 : print x , y ; x , y = y , x
 ```
 
 * Immediately before the open parenthesis that starts the argument list of a function call:
 
 ```
 Yes: spam(1)
-No: spam (1)
+No:  spam (1)
 ```
 
 * Immediately before the open parenthesis that starts an indexing or slicing:
 
 ```
 Yes: dict['key'] = list[index]
-No: dict ['key'] = list [index]
+No:  dict ['key'] = list [index]
 ```
 
 * More than one space around an assignment (or other) operator to align it with another.
@@ -223,7 +225,7 @@ understand two things:
 * Why it does it
 
 You should attempt to make the code "self-documenting" by using descriptive
-names for functions and variables. When the reason for doing something
+names for functions and variables; when the reason for doing something
 cannot be made clear, however, you can add a comment to explain the reason
 for a piece of code.
 
