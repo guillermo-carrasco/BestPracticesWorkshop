@@ -59,10 +59,9 @@ workshop, but you are welcome to try installing on your own as well.
 
 ### Styling Standards
 
-```
-Code is read much more often than it is written.
-     - A Wise Pythonista
-```
+>Code is read much more often than it is written.
+>     - A Wise Pythonista
+
  
 We're focusing on Python development on this workshop. Python has its own styling
 guide and patterns (which can actually also be applied to most of the existing
