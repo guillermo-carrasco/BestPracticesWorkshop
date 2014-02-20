@@ -304,6 +304,8 @@ Linking packages ...
 Now we need to install Django. Let's enter the environment and see if the Anaconda repos have it:
 
 ```
+mario@milou1 ~ $ source activate django-webdev
+prepending /home/mario/anaconda/envs/django-webdev/bin to PATH
 (django-webdev)mario@milou1 ~ $ conda search django
 (django-webdev)mario@milou1 ~ $
 ```
