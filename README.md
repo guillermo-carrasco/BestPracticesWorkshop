@@ -1,4 +1,4 @@
-#Best Practices on Development - Workshop material
+#Best Practices on Development Workshop
 
 Material for the workshop on Best Practices on Development hosted at Science
 For Life Laboratory, Stockholm, Sweden.
@@ -37,6 +37,25 @@ We will go through the installation of conda/Anaconda at the beginning of the
 workshop, but you are welcome to try installing on your own as well.
 
 ## Workshop Material
+
+**Index:**
+
+* [Styling Standards](#styling-standards)
+    * [4 spaces per indentation level](#4-spaces-per-indentation-level)
+    * [Indentation of Multi-Line Statements](#indentation-of-multi-line-statements)
+    * [Maximum line length (soft rule)](#maximum-line-length-soft-rule)
+    * [Imports](#imports)
+    * [Whitespace in Expressions and Statements](#whitespace-in-expressions-and-statements)
+    * [Comments](#comments)
+        * [How to Think About Comments](#how-to-think-about-comments)
+        * [Comment formatting](#comment-formatting)
+        * [Inline comments](#inline-comments)
+        * [Documentation strings - Docstrings](#documentation-strings-docstrings)
+    * [Naming conventions](#naming-conventions)
+    * [Other programming recommendations](#other-programming-recommendations)
+* [IPython](#ipython)
+* [Debugger](#debugger-ipdb)
+    * [(i)pdb useful commands](#ipdb-useful-commands)
 
 ### Styling Standards
 
