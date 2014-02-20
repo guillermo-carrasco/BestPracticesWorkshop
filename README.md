@@ -161,9 +161,10 @@ Avoid extraneous whitespace in the following situations:
 * Immediately inside parentheses, brackets or braces.
 
 Yes:
-> spam(ham[1], {eggs: 2})
+`spam(ham[1], {eggs: 2})`
+
 No:
->spam( ham[ 1 ], { eggs: 2 } )
+`spam( ham[ 1 ], { eggs: 2 } )`
 
 * Immediately before a comma, semicolon, or colon:
 
