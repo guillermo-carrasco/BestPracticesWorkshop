@@ -178,21 +178,18 @@ No: spam( ham[ 1 ], { eggs: 2 } )```
 
 * Immediately before a comma, semicolon, or colon:
 
-```Yes: if x == 4: print x, y; x, y = y, x
-
-No: if x == 4 : print x , y ; x , y = y , x```
+```Yes: if x == 4: print x, y; x, y = y, x```
+```No: if x == 4 : print x , y ; x , y = y , x```
 
 * Immediately before the open parenthesis that starts the argument list of a function call:
 
-```Yes: spam(1)
-
-No: spam (1)```
+```Yes: spam(1)```
+```No: spam (1)```
 
 * Immediately before the open parenthesis that starts an indexing or slicing:
 
-```Yes: dict['key'] = list[index]
-
-No: dict ['key'] = list [index]```
+```Yes: dict['key'] = list[index]```
+```No: dict ['key'] = list [index]```
 
 * More than one space around an assignment (or other) operator to align it with another.
 
