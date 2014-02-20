@@ -40,13 +40,15 @@ workshop, but you are welcome to try installing on your own as well.
 
 ### Styling Standards
 
-`Foolish Consistency is the Hobgoblin of Little Minds - "Guido van Rossum"`
+> Code is read much more often than it is written.
+>   - Guido van Rossum, Python's Benevolent Dictator for Life
+
 
 We're focusing on Python development on this workshop. Python has its own styling
-guide and patterns (that can actually also be applied to most of the existing
+guide and patterns (which can actually also be applied to most of the existing
 programming languages). These guide is called [PEP8](http://www.python.org/dev/peps/pep-0008/), 
 and we will be establishing as standard at SciLifeLab the following subset
-of these rules:
+of these rules.:
 
 ####4 spaces per indentation level
 Use 4 spaces per indentation level -- don't use tabs.
@@ -160,34 +162,23 @@ Avoid extraneous whitespace in the following situations:
 
 * Immediately inside parentheses, brackets or braces.
 
-Yes:
-`spam(ham[1], {eggs: 2})`
-
-No:
-`spam( ham[ 1 ], { eggs: 2 } )`
+```Yes: spam(ham[1], {eggs: 2})
+No: spam( ham[ 1 ], { eggs: 2 } )```
 
 * Immediately before a comma, semicolon, or colon:
 
-Yes:
-`if x == 4: print x, y; x, y = y, x`
-No:
-`if x == 4 : print x , y ; x , y = y , x`
+```Yes: if x == 4: print x, y; x, y = y, x
+No: if x == 4 : print x , y ; x , y = y , x```
 
 * Immediately before the open parenthesis that starts the argument list of a function call:
 
-Yes:
-`spam(1)`
-
-No:
-`spam (1)`
+```Yes: spam(1)
+No: spam (1)```
 
 * Immediately before the open parenthesis that starts an indexing or slicing:
 
-Yes:
-`dict['key'] = list[index]`
-
-No:
-`dict ['key'] = list [index]`
+```Yes: dict['key'] = list[index]
+No: dict ['key'] = list [index]```
 
 * More than one space around an assignment (or other) operator to align it with another.
 
@@ -205,32 +196,78 @@ long_variable = 3
 ```
 
 ####Comments
+
+#####How to Think About Comments
+Always remember that the point of your comments is to help people reading it
+understand two things:
+
+* What the code does
+* Why it does it
+
+You should attempt to make the code "self-documenting" by using descriptive
+names for functions and variables. When the reason for doing something
+cannot be made clear, however, you can add a comment to explain the reason
+for a piece of code.
+
+For example:
+
+No:
+```python
+def c_disp(v=0, t):
+    g = 9.81
+    return v*t + (1/2) * g * (t^2)
+```
+
+Yes:
+```python
+def calculate_displacement(velocity=0, time=0, acceleration=9.81):
+    # We're using Newtonian physics here because quantum computing is too expensive
+    return velocity*time + (1/2)(acceleration * time^2)
+```
+
+Yes!! Docstrings!
+```python
+def calculate_displacement(velocity=0, time=0, acceleration=9.81):
+    """Calculate displacement of an object using the Newtonian equation
+        x = vₒt + ½at²
+
+    Default value for accleration is that for Earth near the surface.
+
+    Keyword arguments:
+      velocity: starting velocity
+      time: elapsed time
+
+    Returns a float of the displacement.
+
+    """
+    # We're using Newtonian physics here because quantum computing is too expensive
+    return float(velocity*time + (1/2)(acceleration) * time^2))
+```
+
 Comments that contradict the code are worse than no comments; however,
-** you should always make it a priority to keep the comments up-to-date
+**you should always make it a priority to keep the comments up-to-date
 when the code changes!**
 
-Comments should be complete sentences. If a comment is a phrase or sentence, its
-first word should be capitalized, unless it is an identifier that begins with a
-lowercase letter (never alter the case of identifiers!).
-
-If a comment is short, the period at the end can be omitted. Block comments generally
-consist of one or more paragraphs built out of complete sentences, and each sentence
-should end in a period.
+#####Comment Formatting
+Comments should be complete sentences. If a comment is short, the period at the
+end can be omitted. Block comments generally consist of one or more paragraphs
+built out of complete sentences, and each sentence should end in a period.
 
 Python coders from non-English speaking countries: please write your comments in
 English, unless you are 120% sure that the code will never be read by people who
-don't speak your language.
+don't speak your language. Python's author is Dutch, and if he can do it,
+you can do it.
 
 #####Inline comments
-Use inline comments sparingly.
+Use inline comments infrequently.
 
 An inline comment is a comment on the same line as a statement. Inline comments
 should be separated by at least two spaces from the statement. They should start
 with a `#` and a single space.
 
-Inline comments are unnecessary and in fact distracting if they state the obvious.
-Don't do this:
+Inline comments are rarely necessary and in fact distracting if they state the obvious.
 
+Don't do this:
 ```python
 x = x + 1                 # Increment x
 ```
@@ -239,6 +276,7 @@ But this is useful:
 ```python
 x = x + 1                 # Compensate for border
 ```
+
 #####Documentation strings (Docstrings)
 A docstring is a string literal that occurs as the first statement in a module,
 function, class, or method definition. Such a docstring becomes the ```__doc__```
@@ -246,7 +284,7 @@ function, class, or method definition. Such a docstring becomes the ```__doc__``
 
 Write docstrings for all public modules, functions, classes, and methods.
 Docstrings are not necessary for non-public methods, but you should have a comment
-that describes what the method does. This comment should appear after the def line
+that describes what the method does. This comment should appear after the def line.
 
 Use the docstrings to document the parameters of your function, so other people
 can easily understand what the function does:
@@ -255,16 +293,18 @@ def complex(real=0.0, imag=0.0):
     """Form a complex number.
 
     Keyword arguments:
-    real -- the real part (default 0.0)
-    imag -- the imaginary part (default 0.0)
+      real -- the real part (default 0.0)
+      imag -- the imaginary part (default 0.0)
+
+    Returns a float of the complex number.
 
     """
     if imag == 0.0 and real == 0.0: return complex_zero
     ...
 ```
 
-__Suggestion__: Use [sphinx](http://sphinx-doc.org/) style docstrings to generate 
-nice and exportable configurations.
+__Suggestion__: Use [sphinx](http://sphinx-doc.org/)-style docstrings to generate 
+readable documentation that can also be used to auto-generate full web-based docs.
 
 ####Naming conventions
 There are a lot of different naming styles. It helps to be able to recognize what 
@@ -276,11 +316,26 @@ conventions:
 can be used in the module name if it improves readability. Since module names are mapped 
 to file names, and some file systems are case insensitive and truncate long names, 
 it is important that module names be chosen to be fairly short.
-* _Class names_: Class names should normally use the CapWords convention.
+* _Class names_: Class names should normally use the CapWords convention (also called CamelCase).
+
+```python
+class MyNewClass(object):
+```
+
 * _Exception names_: Because exceptions should be classes, the class naming convention 
 applies here.
+
+```python
+class MyNewException(Exception):
+```
+
 * _Function Names_: Function names should be lowercase, with words separated by underscores 
 as necessary to improve readability.
+
+```python
+def my_new_function():
+```
+
 * _Function and method arguments_:
     * Always use ```self``` for the first argument to instance methods.
     * Always use ```cls``` for the first argument to class methods.
@@ -292,6 +347,16 @@ as necessary to improve readability.
     * Use the function naming rules: lowercase with words separated by underscores 
     as necessary to improve readability. 
     * Use one leading underscore only for non-public methods and instance variables.
+
+```python
+class MyNewClass(object):
+    def _my_new_class_method(cls):
+        ...
+
+    def my_new_instance_method(self):
+       ...
+```
+
 * _Constants_: Constants are usually defined on a module level and written in all 
 capital letters with underscores separating words. Examples include MAX_OVERFLOW and TOTAL.
 
