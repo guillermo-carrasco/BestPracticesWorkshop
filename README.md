@@ -41,7 +41,7 @@ workshop, but you are welcome to try installing on your own as well.
 ### Styling Standards
 
 > Code is read much more often than it is written.
->   - Guido van Rossum, Python's Benevolent Dictator for Life
+  __Guido van Rossum, Python's Benevolent Dictator for Life__
 
 
 We're focusing on Python development on this workshop. Python has its own styling
