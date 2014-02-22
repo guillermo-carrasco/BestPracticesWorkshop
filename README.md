@@ -58,3 +58,10 @@ installation and usage of Ana/conda.
     * [(i)pdb useful commands](DOCS/ipdb.md#ipdb-useful-commands)
 * [Testing](DOCS/testing.md)
 
+-----------
+
+###Development workflow at Science For Life Laboratory
+<p align="center">
+  <img src="https://raw2.github.com/guillermo-carrasco/BestPracticesWorkshop/master/images/development_workflow.png"
+       alt="Development workflow at SciLifeLab"/>
+</p>
