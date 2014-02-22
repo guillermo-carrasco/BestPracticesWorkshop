@@ -2,7 +2,7 @@
 __________
 ###Testing and Continuous Integration
 ####Testing
-Testing is one of the most abandoned good practices on development... and that's a real pitty. 
+Testing is one of the most abandoned good practices on development... and that's a real pity. 
 
 One should think like this:
 
@@ -14,20 +14,20 @@ But instead we usually think like this:
 >Yay! I finished coding my functionality, that I'm pretty sure it works... maybe I should write
 >some tests... I don't have time, I'll do some manual checks and this should be ok.
 
-I can admit that sometimes writting a test can be even more difficult than writting the actual
+I can admit that sometimes writing a test can be even more difficult than writing the actual
 functionality to be tested, but one should always prioritize the testing. This specially applies to teams of developers.
 
 If you're developing a project together with other people, it is very probable that you cannot keep track
 of all of what your partners are doing, leading you to a situation where you don't understand all the
 project's code. This is OK, that's why you're on a team, and not working alone. However, this doesn't mean that
-both you and your team have to take care about not breaking other's code.
+both you and your team doesn't have to take care about not breaking other's code.
 
 Here is where testing helps. Test-driven development (TDD) is a software development process that relies 
 on the repetition of a very short development cycle: first the developer writes an (initially failing) 
 automated test case that defines a desired improvement or new function, then produces the minimum amount 
 of code to pass that test, and finally refactors the new code to acceptable standards.
 
-THe advantages of writting this tests and executing them after each new addition to the code are (extracted
+THe advantages of writing this tests and executing them after each new addition to the code are (extracted
 from [this post](http://stackoverflow.com/questions/67299/is-unit-testing-worth-the-effort)):
 
 1. Unit Tests allows you to make big changes to code quickly. You know it works now because you've run the tests, when you make the changes you need to make, you need to get the tests working again. This saves hours.
@@ -51,13 +51,66 @@ This is one you'll only believe when you're doing it :)
 #####A short example - TDD cycle
 You have to write a method that takes an integer as a parameter and returns:
 
-* The same number if that nimber is odd
+* The same number if that number is odd
 * The next integer if the number is even
 
 The TDD cycle would be:
 
-1.- Write the test
+1. Write the test
 
+```python
+def test_odd(self):
+    """Testing odd method
+    """
+    with self.assertRaises(ValueError):
+        exercises.odd('1')
+    self.assertEqual(1, exercises.odd(1))
+    self.assertEqual(3, exercises.odd(2))
+```
+This is a complete test for this functionality: We're testing that the parameter is an integer,
+that it returns the same number if the parameter is odd and that it returns the next integer if
+the parameter is even.
+
+2. Write the code
+
+```python
+def odd(n):
+    """Return the closest odd number to n
+
+    Paramss:
+        n - An integer
+    """
+    if not n%2:
+        return n+1
+    return n
+```
+
+3. Run the test: In this case the test will fail, because the first assertion (checking that 
+the value is an integer), will raise TypeError. This is because we're no checking that the value 
+is an integer, and therefore our function will try to execute `n%2`, n being a character, and will crash.
+
+4. Fix the code
+
+```python
+def odd(n):
+    """Return the closest odd number to n
+
+    Paramss:
+        n - An integer
+    """
+    if not isinstance(n, int):
+        raise ValueError("The parameter must be an integer!")
+    if not n%2:
+        return n+1
+    return n
+```
+
+5. Run the test again: And in this case the test will pass. Otherwise we will go back to 4
+
+As you can see this iterative process enforces the correctness of the code. Obviously, the tests
+have to be meaningful also, and takes time to learn how to write these tests.
+
+####Continuous Integration
 
 __________
 [BACK TO INDEX](../README.md)
