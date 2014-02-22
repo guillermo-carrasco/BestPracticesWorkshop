@@ -56,5 +56,5 @@ installation and usage of Ana/conda.
 * [IPython](DOCS/ipython.md)
 * [Debugger](DOCS/ipdb.md)
     * [(i)pdb useful commands](DOCS/ipdb.md#ipdb-useful-commands)
- * [Testing](DOCS/testing.md)
+* [Testing](DOCS/testing.md)
 
