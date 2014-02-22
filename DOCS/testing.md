@@ -58,52 +58,54 @@ The TDD cycle would be:
 
 1. Write the test
 
-```python
-def test_odd(self):
-    """Testing odd method
-    """
-    with self.assertRaises(ValueError):
-        exercises.odd('1')
-    self.assertEqual(1, exercises.odd(1))
-    self.assertEqual(3, exercises.odd(2))
-```
-This is a complete test for this functionality: We're testing that the parameter is an integer,
-that it returns the same number if the parameter is odd and that it returns the next integer if
-the parameter is even.
+    ```python
+    def test_odd(self):
+        """Testing odd method
+        """
+        with self.assertRaises(ValueError):
+            exercises.odd('1')
+        self.assertEqual(1, exercises.odd(1))
+        self.assertEqual(3, exercises.odd(2))
+    ```
+    This is a complete test for this functionality: We're testing that the parameter is an integer,
+    that it returns the same number if the parameter is odd and that it returns the next integer if
+    the parameter is even.
 
 2. Write the code
 
-```python
-def odd(n):
-    """Return the closest odd number to n
+    ```python
+    def odd(n):
+        """Return the closest odd number to n
+    
+        Paramss:
+            n - An integer
+        """
+        if not n%2:
+            return n+1
+        return n
+    ```
 
-    Paramss:
-        n - An integer
-    """
-    if not n%2:
-        return n+1
-    return n
-```
+3. Run the test
 
-3. Run the test: In this case the test will fail, because the first assertion (checking that 
-the value is an integer), will raise TypeError. This is because we're no checking that the value 
-is an integer, and therefore our function will try to execute `n%2`, n being a character, and will crash.
+    In this case the test will fail, because the first assertion (checking that 
+    the value is an integer), will raise TypeError. This is because we're no checking that the value 
+    is an integer, and therefore our function will try to execute `n%2`, n being a character, and will crash.
 
 4. Fix the code
 
-```python
-def odd(n):
-    """Return the closest odd number to n
-
-    Paramss:
-        n - An integer
-    """
-    if not isinstance(n, int):
-        raise ValueError("The parameter must be an integer!")
-    if not n%2:
-        return n+1
-    return n
-```
+    ```python
+    def odd(n):
+        """Return the closest odd number to n
+    
+        Paramss:
+            n - An integer
+        """
+        if not isinstance(n, int):
+            raise ValueError("The parameter must be an integer!")
+        if not n%2:
+            return n+1
+        return n
+    ```
 
 5. Run the test again: And in this case the test will pass. Otherwise we will go back to 4
 
@@ -111,6 +113,13 @@ As you can see this iterative process enforces the correctness of the code. Obvi
 have to be meaningful also, and takes time to learn how to write these tests.
 
 ####Continuous Integration
+Continuous integration is a way of easing the live to developers. Basically it automates the testing process.
+It does not automate the actual writing of the tests of course, but saves a lot of time and ensures that the tests
+are run **always**. [Travis-CI](http://docs.travis-ci.com/user/getting-started/) is one of these systems. You can integrate your GitHub project in Travis-CI and it will run your test suite in a fresh environment **on every new commit**!
+Isn't it fantastic? We will show how to do this in the workshop, but if you want to try it yourself, the
+documentation is great ;-)
+
+
 
 __________
 [BACK TO INDEX](../README.md)
