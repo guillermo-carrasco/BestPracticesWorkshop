@@ -6,7 +6,7 @@
 Welcome to Best Practices on Development Workshop's documentation!
 ==================================================================
 
-Writting proper documentaiton will help you **and others** to understand the 
+Writing proper documentation will help you **and others** to understand the 
 code way easier. It will also make you think on your code before actually start
 coding, just like unit testing!
 
@@ -25,6 +25,4 @@ Indices and tables
 ==================
 
 * :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
 
