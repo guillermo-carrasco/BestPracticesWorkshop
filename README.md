@@ -61,6 +61,8 @@ installation and usage of Ana/conda.
 
 -----------
 
+[![Build Status](https://travis-ci.org/guillermo-carrasco/BestPracticesWorkshop.png?branch=master)](https://travis-ci.org/guillermo-carrasco/BestPracticesWorkshop)
+
 ###Development workflow at Science For Life Laboratory
 <p align="center">
   <img src="https://raw2.github.com/guillermo-carrasco/BestPracticesWorkshop/master/images/development_workflow.png"
