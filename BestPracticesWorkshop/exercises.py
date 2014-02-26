@@ -15,7 +15,7 @@ def r_c(DNA, as_string=False):
 
 def ext_k(k, DNA):
     kmers = set()
-    [kmers.add(DNA[i:i+int(k)]) for i in range(len(DNA) - k + 1)]
+    [kmers.add(DNA[i:i+int(k)]) for i in range(len(DNA) - k)]
     return kmers
 
 
