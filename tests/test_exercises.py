@@ -34,7 +34,7 @@ class ExercisesTest(unittest.TestCase):
     def test_3_extract_kmers(self):
         """Testing extract K-mers function
 
-        Extract all k-mers from the given DNA sequence
+        Returns a set of all k-mers in DNA.
         """
         self.assertTrue(False)
 
