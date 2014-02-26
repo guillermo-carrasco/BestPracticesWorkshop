@@ -2,7 +2,7 @@ import re
 
 from BestPracticesWorkshop import REV_COM_TRANSLATION
 
-def search(text, pattern):
+def search(pattern, text):
     """Searches for exact matchings of pattern in text.
 
     :param text: String where to perform the search
