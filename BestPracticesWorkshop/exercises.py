@@ -6,8 +6,8 @@ def search(pattern, text):
     return [str(m.start()) for m in re.finditer('(?=' + pattern + ')' , text)]
 
 
-def r_c(DNA, as_string=False):
-    reverse = [REV_COM_TRANSLATION.get(c) for c in DNA[::-1]]
+def r_c(d, as_string=False):
+    reverse = [REV_COM_TRANSLATION.get(c) for c in d[::-1]]
     if as_string:
         reverse = ''.join(reverse)
     return reverse
