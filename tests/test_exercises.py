@@ -20,7 +20,7 @@ class ExercisesTest(unittest.TestCase):
         """Testing reverse_complement function
         """
         DNA = "ATATATCCCGGCG"
-        self.assertEqual("CGCCGGGATATAT", exercises.reverse_complement(DNA, as_string=True))
+        self.assertEqual("CGCCGGGATATAT", exercises.r_c(DNA, as_string=True))
 
     def test_2_search(self):
         """Testing search method
@@ -32,7 +32,7 @@ class ExercisesTest(unittest.TestCase):
         """Testing extract K-mers function
         """
         res = {'AC', 'CT', 'GA', 'GT', 'TG'}
-        self.assertEqual(res, exercises.extract_kmers(2, 'ACTGTGAC'))
+        self.assertEqual(res, exercises.ext_k(2, 'ACTGTGAC'))
 
     def test_4_most_frequent_kmer(self):
         """Testing most_frequent_kmer method
@@ -41,5 +41,5 @@ class ExercisesTest(unittest.TestCase):
         # checking for reverse complement, because both appear 2 times. If looking
         # for reverse complement, AAAA and TTTT are the most frequent ones.
         DNA = "AACCTTTTGACATTTTCGCCAAAAGGGGG"
-        self.assertEqual(['TTTT', 'GGGG'], exercises.most_frequent_kmer(DNA, 4))
-        self.assertEqual(['AAAA', 'TTTT'], exercises.most_frequent_kmer(DNA, 4, reverse=True))
+        self.assertEqual(['TTTT', 'GGGG'], exercises.mfk(DNA, 4))
+        self.assertEqual(['AAAA', 'TTTT'], exercises.mfk(DNA, 4, r=True))
