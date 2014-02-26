@@ -31,8 +31,8 @@ class ExercisesTest(unittest.TestCase):
     def test_3_extract_kmers(self):
         """Testing extract K-mers function
         """
-        res = {'AC', 'CT', 'GA', 'GT', 'TG'}
-        self.assertEqual(res, exercises.ext_k(2, 'ACTGTGAC'))
+        res = {'AC', 'CT', 'GA', 'GT', 'TG', 'CC'}
+        self.assertSetEqual(res, exercises.ext_k(2, 'ACTGTGACC'))
 
     def test_4_most_frequent_kmer(self):
         """Testing most_frequent_kmer method
