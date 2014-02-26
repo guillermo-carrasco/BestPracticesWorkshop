@@ -19,15 +19,15 @@ def extract_kmers(k, DNA):
     return kmers
 
 
-def most_frequent_kmer(DNA, k, reverse=False):
-    results = {}
-    kmers = extract_kmers(k, DNA)
+def most_frequent_kmer(s, k, r=False):
+    res = {}
+    kmers = extract_kmers(k, s)
     for kmer in kmers:
-        n = len(search(kmer, DNA))
-        if reverse:
-            n += len(search(''.join(reverse_complement(kmer)), DNA))
-        if results.has_key(n):
-            results[n].append(kmer)
+        n = len(search(kmer, s))
+        if r:
+            n += len(search(''.join(r_complement(kmer)), s))
+        if res.has_key(n):
+            res[n].append(kmer)
         else:
-            results[n] = [kmer]
-    return results[max(results.keys())]
+            res[n] = [kmer]
+    return res[max(res.keys())]
