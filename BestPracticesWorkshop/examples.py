@@ -1,7 +1,7 @@
 def sum_list(lst):
     """Sum all elements in list
 
-    :param l: List containing elements to sum
+    :param lst: List containing elements to sum
     :return: The sum of all elements in the list
     :rtype: int
     :raises ValueError: If there is any non-integer element on the list
@@ -13,7 +13,7 @@ def sum_list(lst):
 def odd(num):
     """Return the closest odd number to n
 
-    :param n: An integer
+    :param num: An integer
     :return: The same integer if it is odd. The next integer otherwise
     :rtype: int
     :raises ValueError: If the parameter is not inteer

@@ -46,8 +46,8 @@ def most_frequent_kmer(DNA, k, reverse=False):
     :param DNA: String representing a DNA sequence
     :param k: Length of the k-mer
     :param reverse: If true, search also the k-mers' reverse complements
-    :return: A set of most common k-mers in DNA
-    :rtype: set
+    :return: A list of most common k-mers in DNA
+    :rtype: list
     """
     results = {}
     kmers = extract_kmers(k, DNA)
