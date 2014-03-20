@@ -255,7 +255,8 @@ python                       2.6.8                         1  defaults
                              3.3.2                         0  defaults        
                              3.3.2                         1  defaults        
                              3.3.3                         0  defaults        
-                             3.3.4                         0  defaults        
+                             3.3.4                         0  defaults
+                             3.3.5                         0  defaults
                              ...                  ...         ...
 mario@milou1 ~ $
 ```
@@ -263,23 +264,26 @@ mario@milou1 ~ $
 Plenty of versions available (if you do this search yourself, you'll also see many other packages I'm omitting here, including iPython, Biopython, and more). Let's install python 3.3.4:
 
 ```
-mario@milou1 ~ $ conda create -n django-webdev python=3.3.4
+mario@milou1 ~ $ conda create -n django-webdev python=3.3.5
 ```
 ```
+mario@milou2 ~ $ conda create -n django-webdev python=3.3.5
+Fetching package metadata: ..
+Solving package specifications: ...
 Package plan for installation in environment /home/mario/anaconda/envs/django-webdev:
 
 The following packages will be downloaded:
 
     package                    |            build
     ---------------------------|-----------------
-    python-3.3.4               |                0        18.6 MB
+    python-3.3.5               |                0        18.6 MB
 
 The following packages will be linked:
 
     package                    |            build
     ---------------------------|-----------------
     openssl-1.0.1c             |                0   hard-link
-    python-3.3.4               |                0   hard-link
+    python-3.3.5               |                0   hard-link
     readline-6.2               |                2   hard-link
     sqlite-3.7.13              |                0   hard-link
     system-5.8                 |                1   hard-link
@@ -289,7 +293,7 @@ The following packages will be linked:
 Proceed ([y]/n)? y
 
 Fetching packages ...
-python-3.3.4-0.tar.bz2 100% |###############################################################| Time: 0:00:15   1.28 MB/s
+python-3.3.5-0.tar.bz2 100% |###############################################################| Time: 0:00:08   2.21 MB/s
 Extracting packages ...
 [      COMPLETE      ] |########################################################################################| 100%
 Linking packages ...
@@ -312,7 +316,47 @@ prepending /home/mario/anaconda/envs/django-webdev/bin to PATH
 (django-webdev)mario@milou1 ~ $
 ```
 
-Nope! That makes sense of course because it's not a scientific package. We can just download it using pip instead, because both pip and conda make use of Python's setuptools distribution management system:
+Nope! That makes sense of course because it's not a scientific package. We can just download it using pip instead, because both pip and conda make use of Python's setuptools distribution management system.
+
+Important note!!
+
+conda does not by default install pip or setup\_tools (though these __are__ included in the anaconda metapackage) so if you need to use pip you must explicitly install it using conda. It may appear that you can use it without installing it, but I assure you that this is merely your computer deceiving you while trying to be helpful: if you examine the pip output closely you will observe that it is installing packages into a location that is not used by your new environment, and a quick `which pip` will show you that this is because it is a binary not installed by, and unrelated to, this environment.
+```
+(django-webdev)mario@milou2 ~ $ conda install pip
+```
+```
+Fetching package metadata: ..
+Solving package specifications: ...
+Package plan for installation in environment /home/mario/anaconda/envs/django-webdev:
+
+The following packages will be downloaded:
+
+    package                    |            build
+    ---------------------------|-----------------
+    pip-1.5.4                  |           py33_0         1.5 MB
+    setuptools-3.1             |           py33_0         474 KB
+    ------------------------------------------------------------
+                                           Total:         2.0 MB
+
+The following packages will be linked:
+
+    package                    |            build
+    ---------------------------|-----------------
+    pip-1.5.4                  |           py33_0   hard-link
+    setuptools-3.1             |           py33_0   hard-link
+
+Proceed ([y]/n)? y
+
+Fetching packages ...
+pip-1.5.4-py33_0.tar.bz2 100% |#############################################################| Time: 0:00:02 712.10 kB/s
+setuptools-3.1-py33_0.tar.bz2 100% |########################################################| Time: 0:00:01 421.00 kB/s
+Extracting packages ...
+[      COMPLETE      ] |#########################################################################################| 100%
+Linking packages ...
+[      COMPLETE      ] |#########################################################################################| 100%
+```
+
+Great! Now we can use pip.
 
 ```
 (django-webdev)mario@milou1 ~ $ pip install django
