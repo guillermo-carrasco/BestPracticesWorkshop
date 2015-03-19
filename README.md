@@ -65,6 +65,6 @@ installation and usage of Ana/conda.
 
 ###Development workflow at Science For Life Laboratory
 <p align="center">
-  <img src="https://raw2.github.com/guillermo-carrasco/BestPracticesWorkshop/master/images/development_workflow.png"
+  <img src="https://raw.githubusercontent.com/guillermo-carrasco/BestPracticesWorkshop/master/images/development_workflow.png"
        alt="Development workflow at SciLifeLab"/>
 </p>
